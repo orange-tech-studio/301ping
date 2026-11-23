@@ -19,8 +19,7 @@ const benefits = [
     {
         number: "02",
         title: "A recognizable address",
-        description:
-            "A meaningful back-half helps people recognize the purpose of a link before they visit it."
+        description: "A meaningful back-half helps people recognize the purpose of a link before they visit it."
     },
     {
         number: "03",
@@ -158,7 +157,8 @@ export default function CustomLinks() {
                             </h1>
                             <p className="mt-7 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
                                 Create a short link, then replace its random back-half with a memorable word.
-                                The free plan includes three custom links; higher limits are available on paid plans.
+                                The free plan includes three custom links; higher limits are available on paid
+                                plans.
                             </p>
                             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                                 <Link
@@ -213,6 +213,40 @@ export default function CustomLinks() {
                                     </article>
                                 ))}
                             </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="border-b border-line bg-white">
+                    <div className="mx-auto grid max-w-grid grid-cols-1 items-center gap-10 px-6 py-16 md:px-10 md:py-20 lg:grid-cols-12 lg:px-16">
+                        <div className="lg:col-span-4">
+                            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                                See it in action
+                            </p>
+                            <h2 className="mt-5 max-w-sm font-editorial text-4xl font-normal leading-tight text-ink sm:text-5xl">
+                                Make your links your own.
+                            </h2>
+                            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
+                                See how to replace a random back-half with a memorable custom link that is easy
+                                to recognize, share, and remember.
+                            </p>
+                        </div>
+                        <div className="lg:col-span-8">
+                            <div className="overflow-hidden border border-line bg-ink">
+                                <video
+                                    className="aspect-video w-full"
+                                    controls
+                                    preload="metadata"
+                                    playsInline
+                                    aria-label="301 Ping custom links explainer"
+                                >
+                                    <source src="/videos/301-ping-custom-links.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                                Custom links / 301 Ping
+                            </p>
                         </div>
                     </div>
                 </section>

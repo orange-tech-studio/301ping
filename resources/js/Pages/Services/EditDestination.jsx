@@ -220,6 +220,40 @@ export default function EditDestination() {
                 </section>
 
                 <section className="border-b border-line bg-white">
+                    <div className="mx-auto grid max-w-grid grid-cols-1 items-center gap-10 px-6 py-16 md:px-10 md:py-20 lg:grid-cols-12 lg:px-16">
+                        <div className="lg:col-span-4">
+                            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                                See it in action
+                            </p>
+                            <h2 className="mt-5 max-w-sm font-editorial text-4xl font-normal leading-tight text-ink sm:text-5xl">
+                                The same link, a new destination.
+                            </h2>
+                            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
+                                See how easy it is to update where your short link points—while keeping the
+                                original URL, QR code, and every place you have shared it.
+                            </p>
+                        </div>
+                        <div className="lg:col-span-8">
+                            <div className="overflow-hidden border border-line bg-ink">
+                                <video
+                                    className="aspect-video w-full"
+                                    controls
+                                    preload="metadata"
+                                    playsInline
+                                    aria-label="301 Ping edit destination explainer"
+                                >
+                                    <source src="/videos/301-ping-edit-destination.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                                Edit destination / 301 Ping
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section className="border-b border-line bg-white">
                     <div className="mx-auto max-w-grid px-6 py-16 md:px-10 md:py-24 lg:px-16">
                         <div className="mb-10 flex flex-col gap-4 border-b border-line pb-6 sm:flex-row sm:items-end sm:justify-between">
                             <div>

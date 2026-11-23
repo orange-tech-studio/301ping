@@ -208,6 +208,43 @@ export default function BrokenDestinations() {
                     </div>
                 </section>
 
+                <section className="border-b border-line bg-white">
+                    <div className="mx-auto grid max-w-grid grid-cols-1 items-center gap-10 px-6 py-16 md:px-10 md:py-20 lg:grid-cols-12 lg:px-16">
+                        <div className="lg:col-span-4">
+                            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
+                                See it in action
+                            </p>
+                            <h2 className="mt-5 max-w-sm font-editorial text-4xl font-normal leading-tight text-ink sm:text-5xl">
+                                A clearer view of broken destinations.
+                            </h2>
+                            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
+                                Watch how 301 Ping helps you spot a destination that needs attention and get it
+                                back on track—without replacing the short link you already shared.
+                            </p>
+                        </div>
+                        <div className="lg:col-span-8">
+                            <div className="overflow-hidden border border-line bg-ink">
+                                <video
+                                    className="aspect-video w-full"
+                                    controls
+                                    preload="metadata"
+                                    playsInline
+                                    aria-label="301 Ping broken destination monitoring explainer"
+                                >
+                                    <source
+                                        src="/videos/301-ping-broken-destinations-updated.mp4"
+                                        type="video/mp4"
+                                    />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
+                                Broken destination monitoring / 301 Ping
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
                 <section className="border-b border-line">
                     <div className="mx-auto max-w-grid px-6 py-16 md:px-10 md:py-24 lg:px-16">
                         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
