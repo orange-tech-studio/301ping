@@ -14,7 +14,9 @@ RUN apk add --no-cache \
     openssh-client \
     git \
     nginx \
-    supervisor
+    supervisor \
+    nodejs \
+    npm
 
 # Install PHP extensions
 RUN docker-php-ext-install \
