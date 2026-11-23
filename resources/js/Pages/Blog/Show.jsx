@@ -139,6 +139,17 @@ export default function Show({ post }) {
                                         className="mb-10 aspect-[1200/630] w-full border border-line object-cover"
                                     />
                                 )}
+                                {post.video && (
+                                    <video
+                                        controls
+                                        preload="metadata"
+                                        className="mb-10 aspect-video w-full border border-line bg-ink"
+                                        aria-label={`${post.title} video`}
+                                    >
+                                        <source src={post.video} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                )}
                                 <div
                                     className="blog-content max-w-3xl"
                                     dangerouslySetInnerHTML={{ __html: post.html }}

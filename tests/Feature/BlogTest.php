@@ -15,6 +15,12 @@ test('blog post renders markdown with metadata', function () {
         ->where('post.html', fn ($html) => str_contains($html, 'How 301 Ping can help')));
 });
 
+test('QR code blog post includes its explainer video', function () {
+    $this->get('/blog/your-qr-code-is-forever-your-url-isnt')->assertOk()->assertInertia(fn ($page) => $page
+        ->component('Blog/Show')
+        ->where('post.video', '/videos/301-ping-explainer-QR-Code.mp4'));
+});
+
 test('unknown blog post returns 404', function () {
     $this->get('/blog/nope')->assertNotFound();
 });

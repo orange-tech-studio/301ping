@@ -6,6 +6,7 @@ updated: 2026-11-19
 author: 301 Ping Team
 image: https://images.unsplash.com/photo-1650454664813-904aa41701bb?w=1600&h=840&fit=crop&q=80
 image_alt: A QR code built from dark 3D blocks on a light surface
+video: /videos/301-ping-explainer-QR-Code.mp4
 tags: [qr-codes, short-links, tracking]
 ---
 

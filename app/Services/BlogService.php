@@ -76,6 +76,7 @@ class BlogService
             'description' => $description,
             'image' => $this->absoluteUrl($meta['image'] ?? null),
             'image_alt' => (string) ($meta['image_alt'] ?? $title),
+            'video' => isset($meta['video']) ? (string) $meta['video'] : null,
             'author' => (string) ($meta['author'] ?? config('app.name')),
             'tags' => array_values(array_map('strval', (array) ($meta['tags'] ?? []))),
             'draft' => (bool) ($meta['draft'] ?? false),
