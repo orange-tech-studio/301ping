@@ -142,18 +142,49 @@ const services = {
 }
 
 const serviceDetails = {
-    "custom-links": { label: "Custom links", route: "services.custom-links" },
-    "edit-destination": { label: "Edit destinations", route: "services.edit-destination" },
-    "broken-destinations": { label: "Broken destination monitoring", route: "services.broken-destinations" },
-    "link-analytics": { label: "Link analytics", route: "services.link-analytics" },
-    "link-tags": { label: "Link tags", route: "services.link-tags" },
-    "qr-code-logo": { label: "Branded QR codes", route: "services.qr-code-logo" }
+    "custom-links": {
+        label: "Custom links",
+        route: "services.custom-links",
+        workspaceRoute: "links",
+        workspaceAction: "Customize a link"
+    },
+    "edit-destination": {
+        label: "Edit destinations",
+        route: "services.edit-destination",
+        workspaceRoute: "links",
+        workspaceAction: "Update a destination"
+    },
+    "broken-destinations": {
+        label: "Broken destination monitoring",
+        route: "services.broken-destinations",
+        workspaceRoute: "links",
+        workspaceAction: "Review your links"
+    },
+    "link-analytics": {
+        label: "Link analytics",
+        route: "services.link-analytics",
+        workspaceRoute: "links",
+        workspaceAction: "Check link activity"
+    },
+    "link-tags": {
+        label: "Link tags",
+        route: "services.link-tags",
+        workspaceRoute: "tags",
+        workspaceAction: "Manage your tags"
+    },
+    "qr-code-logo": {
+        label: "Branded QR codes",
+        route: "services.qr-code-logo",
+        workspaceRoute: "links",
+        workspaceAction: "Choose a link"
+    }
 }
 
 export default function ConnectedTools({ service }) {
     const currentService = services[service]
     const { auth } = usePage().props
-    const actionHref = auth?.user ? route("links") : route("register")
+    const isAuthenticated = Boolean(auth?.user)
+    const actionHref = isAuthenticated ? route("links") : route("register")
 
     if (!currentService) return null
 
@@ -180,13 +211,15 @@ export default function ConnectedTools({ service }) {
                 </div>
 
                 <div className="mt-10 grid grid-cols-1 border-l border-t border-line md:grid-cols-3">
-                    {currentService.connections.map((connection, index) => {
+                    {currentService.connections.map((connection) => {
                         const relatedService = serviceDetails[connection.service]
 
                         return (
                             <Link
                                 key={connection.service}
-                                href={route(relatedService.route)}
+                                href={route(
+                                    isAuthenticated ? relatedService.workspaceRoute : relatedService.route
+                                )}
                                 className="group flex min-h-56 flex-col border-b border-r border-line bg-paper p-6 transition-colors hover:bg-white"
                             >
                                 <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-accent-dark">
@@ -199,7 +232,9 @@ export default function ConnectedTools({ service }) {
                                     {connection.description}
                                 </p>
                                 <span className="mt-5 flex items-center justify-between border-t border-line pt-3 font-mono text-[10px] uppercase tracking-[0.12em] text-ink">
-                                    Explore {relatedService.label}
+                                    {isAuthenticated
+                                        ? relatedService.workspaceAction
+                                        : `Explore ${relatedService.label}`}
                                     <span
                                         className="transition-transform group-hover:translate-x-1"
                                         aria-hidden="true"
@@ -207,16 +242,13 @@ export default function ConnectedTools({ service }) {
                                         →
                                     </span>
                                 </span>
-                                <span className="sr-only">Recommendation {index + 1}</span>
                             </Link>
                         )
                     })}
                 </div>
 
                 <div className="mt-8 flex flex-col gap-4 border-t border-line pt-6 sm:flex-row sm:items-center sm:justify-between">
-                    <p className="text-sm text-muted">
-                        See how these tools work together on your own links.
-                    </p>
+                    <p className="text-sm text-muted">See how these tools work together on your own links.</p>
                     <Link
                         href={actionHref}
                         className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-dark transition-colors hover:text-ink"
