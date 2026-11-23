@@ -6,21 +6,21 @@ import SeoHead from "@/Components/SeoHead"
 const benefits = [
     {
         number: "01",
-        title: "Catch dead ends earlier",
+        title: "Catch dead ends automatically",
         description:
-            "Find out when a destination is no longer reachable, before a broken page becomes the first impression of your campaign."
+            "301 Ping checks destinations on a recurring schedule, so you don't have to inspect every URL yourself."
     },
     {
         number: "02",
         title: "Protect every place you share",
         description:
-            "Keep an eye on destinations behind links in bios, emails, QR codes, ads, and printed materials—all from one link workflow."
+            "Monitor destinations behind links in bios, emails, QR codes, ads, and printed materials—all from one link workflow."
     },
     {
         number: "03",
         title: "Spend less time chasing links",
         description:
-            "See which destination needs attention and head straight to the short link that points to it instead of checking URLs one by one."
+            "See which automatically checked destination needs attention and head straight to the short link that points to it."
     },
     {
         number: "04",
@@ -39,15 +39,15 @@ const steps = [
     },
     {
         number: "02",
-        title: "Review destination health",
+        title: "Let 301 Ping check automatically",
         description:
-            "Check the destination behind your link and identify links that may no longer lead to a working page."
+            "301 Ping checks your linked pages on the schedule included with your plan. No manual URL-by-URL checks needed."
     },
     {
         number: "03",
-        title: "Fix the destination",
+        title: "Review and fix when needed",
         description:
-            "Update the destination for the affected short link, then share the same short URL with confidence."
+            "When a check finds a destination that needs attention, update it and keep sharing the same short URL."
     }
 ]
 
@@ -162,7 +162,7 @@ export default function BrokenDestinations() {
         <div className="min-h-screen bg-paper">
             <SeoHead
                 title="Broken Link Monitoring for Short URLs"
-                description="Monitor the destinations behind your short links to find broken pages before they disrupt a campaign. Check URL health, repair issues, and keep QR codes and shared links working."
+                description="301 Ping automatically checks the destinations behind your short links on a recurring schedule. Review issues when they surface, update broken destinations, and keep sharing the same links."
             />
             <Header isAuthenticated={isAuthenticated} user={user} />
 
@@ -174,13 +174,14 @@ export default function BrokenDestinations() {
                                 Services / Broken destination monitoring
                             </p>
                             <h1 className="max-w-2xl font-editorial text-5xl font-normal leading-[1.05] text-ink sm:text-6xl lg:text-7xl">
-                                Monitor broken links.{" "}
-                                <span className="text-accent">Keep short URLs working.</span>
+                                Automatically monitor destinations.{" "}
+                                <span className="text-accent">Fix issues when they surface.</span>
                             </h1>
                             <p className="mt-7 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-                                A short link is only useful when it leads somewhere. Monitor the pages behind
-                                your links, catch destinations that need attention, and keep people moving
-                                toward what matters.
+                                A short link is only useful when it leads somewhere. 301 Ping checks the pages
+                                behind your links automatically on a recurring schedule, so you can focus on
+                                reviewing problems—not checking URLs one by one. Check the pricing table for
+                                each plan&apos;s monitoring frequency and details.
                             </p>
                             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                                 <Link
@@ -197,7 +198,7 @@ export default function BrokenDestinations() {
                                 </Link>
                             </div>
                             <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
-                                Spot problems / Update destinations / Keep sharing
+                                Automatic checks / Review flagged destinations / Keep sharing
                             </p>
                         </div>
 
@@ -218,8 +219,8 @@ export default function BrokenDestinations() {
                                     Every click deserves a working page.
                                 </h2>
                                 <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted">
-                                    Pages move, offers expire, and URLs change. A little visibility helps you
-                                    catch the links that no longer do their job.
+                                    Pages move, offers expire, and URLs change. Scheduled automatic checks help
+                                    surface destinations that no longer do their job.
                                 </p>
                             </div>
                             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-8 lg:gap-x-7 lg:gap-y-10">
@@ -317,6 +318,17 @@ export default function BrokenDestinations() {
                                 <p className="mt-2 text-sm leading-relaxed text-muted">
                                     It is the web page behind a short link that is unavailable, has moved, or
                                     otherwise no longer takes visitors where you intended.
+                                </p>
+                            </div>
+                            <div className="py-5">
+                                <h3 className="font-grotesk text-sm font-bold text-ink">
+                                    Do I need to check destinations manually?
+                                </h3>
+                                <p className="mt-2 text-sm leading-relaxed text-muted">
+                                    No. On plans that include monitoring, 301 Ping checks destinations
+                                    automatically on a recurring schedule. Check the pricing table for each
+                                    plan&apos;s monitoring frequency and details; you only need to review and
+                                    update a destination if a check finds an issue.
                                 </p>
                             </div>
                             <div className="py-5">
