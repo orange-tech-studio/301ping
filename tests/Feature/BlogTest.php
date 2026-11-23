@@ -3,7 +3,18 @@
 test('blog index lists posts newest first', function () {
     $this->get('/blog')->assertOk()->assertInertia(fn ($page) => $page
         ->component('Blog/Index')
-        ->where('posts.0.slug', 'what-is-a-url-shortener'));
+        ->where('posts.0.slug', 'url-shortener-api'));
+});
+
+test('URL shortener API article renders its metadata and service links', function () {
+    $this->get('/blog/url-shortener-api')->assertOk()->assertInertia(fn ($page) => $page
+        ->component('Blog/Show')
+        ->where('post.title', 'How to Use a URL Shortener API to Automate Link Creation')
+        ->where('post.description', 'Learn how a URL shortener API can automate link creation for apps, campaigns, and internal tools, with practical tips for reliable integrations.')
+        ->where('post.tags', ['url-shortener-api', 'link-shortener-api', 'short-link-api', 'url-shortening-service-api'])
+        ->where('post.html', fn ($html) => str_contains($html, 'href="/documentation/api"'))
+        ->where('post.html', fn ($html) => str_contains($html, 'href="/services/link-tags"'))
+        ->where('post.html', fn ($html) => str_contains($html, 'href="/pricing"')));
 });
 
 test('blog post renders markdown with metadata', function () {
@@ -30,5 +41,6 @@ test('sitemap includes blog pages', function () {
 
     $this->get('/sitemap.xml')
         ->assertSee('<loc>https://301p.ing/blog</loc>', false)
-        ->assertSee('<loc>https://301p.ing/blog/what-is-a-url-shortener</loc>', false);
+        ->assertSee('<loc>https://301p.ing/blog/what-is-a-url-shortener</loc>', false)
+        ->assertSee('<loc>https://301p.ing/blog/url-shortener-api</loc>', false);
 });
