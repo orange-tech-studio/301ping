@@ -2,6 +2,7 @@ import { Link, usePage } from "@inertiajs/react"
 import Footer from "@/Components/Footer"
 import Header from "@/Components/Header"
 import SeoHead from "@/Components/SeoHead"
+import ConnectedTools from "@/Components/Services/ConnectedTools"
 
 const benefits = [
     {
@@ -390,6 +391,8 @@ export default function BrokenDestinations() {
                         </div>
                     </div>
                 </section>
+
+                <ConnectedTools service="broken-destinations" />
 
                 <section className="bg-ink text-paper">
                     <div className="mx-auto flex max-w-grid flex-col gap-8 px-6 py-16 md:px-10 md:py-20 lg:flex-row lg:items-center lg:justify-between lg:px-16">
