@@ -1,0 +1,30 @@
+# Written by `pun migrate` from pint.json.
+[extensions]
+laravel = "on"
+pest = "on"
+phpunit = "on"
+carbon = "on"
+
+[format]
+preset = "laravel"
+
+[format.rules]
+"operators/concat-spacing" = "one"
+"imports/ordered" = { sort = "alphabetical" }
+
+[lint.rules]
+"refactor/rename-phpdoc-tag" = "error"
+"functions/no-unused-closure-use" = "error"
+"style/no-alias-function" = "error"
+"statements/no-empty" = "error"
+"phpdoc/no-superfluous-tags" = { allow-mixed = true, allow-unused-params = true }
+"functions/no-unreachable-default-argument-value" = "error"
+"imports/no-unused" = "error"
+"control-flow/no-useless-return" = "error"
+"style/require-ordered-traits" = "error"
+"phpunit/require-method-casing" = { case = "snake-case" }
+"phpunit/require-protected-setup" = "error"
+"phpdoc/no-access" = "error"
+"phpdoc/no-package" = "error"
+"phpdoc/no-useless-inheritdoc" = "error"
+"classes/prefer-self-in-final" = "error"
